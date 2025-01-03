@@ -6,25 +6,36 @@
     <title>Run Matrix</title>
     <script>
         function runMatrix() {
+            // Получаем список аэропортов из текстового поля
+            const airportsInput = document.getElementById("airports").value;
+
+            // Преобразуем строку в массив
+            const airports = airportsInput.split(',').map(airport => airport.trim());
+
+            // Отправляем запрос на сервер Flask
             fetch('http://127.0.0.1:5000/run', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({})
+                body: JSON.stringify({ airports: airports }) // Передаем массив аэропортов
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                console.log(data); // Логируем результат
+                console.log(data.message); // Логируем сообщение из Flask
+                alert(data.message); // Показываем сообщение пользователю
             })
             .catch(error => {
                 console.error('Ошибка:', error);
+                alert('Произошла ошибка: ' + error);
             });
         }
     </script>
 </head>
 <body>
     <h1>Run Matrix</h1>
+    <p>Введите коды аэропортов через запятую (например: GVA, NYC, LAX):</p>
+    <input type="text" id="airports" placeholder="Введите коды аэропортов" style="width: 300px;">
     <button onclick="runMatrix()">Запустить Matrix</button>
 </body>
 </html>
