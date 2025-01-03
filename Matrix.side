@@ -1,0 +1,136 @@
+{
+  "id": "9117af97-8224-4cd7-aacd-21cb00a6e263",
+  "version": "2.0",
+  "name": "Matrix",
+  "url": "https://matrix.itasoftware.com",
+  "tests": [{
+    "id": "4c008b25-3938-4de4-97df-bbcd936eb597",
+    "name": "Fill GVA",
+    "commands": [{
+      "id": "9ca44c03-9610-4936-9a14-fe71b92765dc",
+      "comment": "",
+      "command": "open",
+      "target": "/search",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "892d3757-261b-4e6b-bacd-47dfacbf08e2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1792x1095",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eaec6545-9956-4cd7-99d5-f4564515d69e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-mdc-form-field-label-0 > .ng-tns-c3899417-0:nth-child(1)",
+      "targets": [
+        ["css=#mat-mdc-form-field-label-0 > .ng-tns-c3899417-0:nth-child(1)", "css:finder"],
+        ["xpath=//label[@id='mat-mdc-form-field-label-0']/mat-label", "xpath:idRelative"],
+        ["xpath=//mat-label", "xpath:position"],
+        ["xpath=//mat-label[contains(.,'Origin')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa3c09bb-6e32-4327-9e45-1e6f9705880c",
+      "comment": "",
+      "command": "type",
+      "target": "id=mat-mdc-chip-list-input-0",
+      "targets": [
+        ["id=mat-mdc-chip-list-input-0", "id"],
+        ["css=#mat-mdc-chip-list-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-mdc-chip-list-input-0']", "xpath:attributes"],
+        ["xpath=//matrix-location-field[@id='matrix-loc-field-0']/mat-chip-grid/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "GVA"
+    }, {
+      "id": "9ecc9bf3-489c-4a8f-a79b-3ac68fdfc7fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mdc-list-item__primary-text",
+      "targets": [
+        ["css=.mdc-list-item__primary-text", "css:finder"],
+        ["xpath=//mat-option[@id='mat-option-98']/span", "xpath:idRelative"],
+        ["xpath=//mat-option/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Geneva International, Switzerland (GVA)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "15ed6672-6921-4c65-9452-ac37f59b77b3",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.ng-tns-c3899417-27 .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.ng-tns-c3899417-27 .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//mat-tab-body[@id='mat-tab-group-0-content-0']/div/matrix-flight-picker/div/div/div[2]/div/div/mat-form-field/div/div[2]/div[2]/matrix-help-button/button/span[4]", "xpath:idRelative"],
+        ["xpath=//matrix-help-button/button/span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49834c29-9048-4a2e-bb82-ff24695aed5e",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.ng-tns-c3899417-27 .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.ng-tns-c3899417-27 .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//mat-tab-body[@id='mat-tab-group-0-content-0']/div/matrix-flight-picker/div/div/div[2]/div/div/mat-form-field/div/div[2]/div[2]/matrix-help-button/button/span[4]", "xpath:idRelative"],
+        ["xpath=//matrix-help-button/button/span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09cecca7-4ca5-4241-8c28-d546246ad82d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.row-element:nth-child(2) > .ng-untouched .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.row-element:nth-child(2) > .ng-untouched .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//mat-tab-body[@id='mat-tab-group-0-content-0']/div/matrix-flight-picker/div/div/matrix-date-selection/div/div[2]/div[2]/matrix-preferred-times/button/span[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/matrix-preferred-times/button/span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15b2fc12-97f2-4b20-8509-66df8a6552a6",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.row-element:nth-child(2) > .ng-untouched .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.row-element:nth-child(2) > .ng-untouched .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//mat-tab-body[@id='mat-tab-group-0-content-0']/div/matrix-flight-picker/div/div/matrix-date-selection/div/div[2]/div[2]/matrix-preferred-times/button/span[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/matrix-preferred-times/button/span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "baf48837-d401-48e1-ab3c-9980232f8e0d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.new > .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.new > .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4ddf518-9b3f-464e-8cba-da4963cf44d0",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.new > .mat-mdc-button-touch-target",
+      "targets": [
+        ["css=.new > .mat-mdc-button-touch-target", "css:finder"],
+        ["xpath=//span[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9f9dfaf8-9a6a-408e-90c9-3fa80de1ce71",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4c008b25-3938-4de4-97df-bbcd936eb597"]
+  }],
+  "urls": ["https://matrix.itasoftware.com/"],
+  "plugins": []
+}

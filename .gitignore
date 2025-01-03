@@ -1,0 +1,6 @@
+# Исключаем виртуальное окружение
+venv/
+.idea/
+__pycache__/
+*.pyc
+drivers/chromedriver
