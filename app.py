@@ -7,7 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Разрешает запросы с любого источника
+
+# Разрешаем запросы с любых источников, включая локальные файлы
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/')
 def index():
@@ -16,7 +18,7 @@ def index():
 @app.route('/run', methods=['POST'])
 def run_matrix():
     # Настройка WebDriver
-    service = Service('./drivers/chromedriver')  # Путь до вашего драйвера
+    service = Service('./drivers/chromedriver')
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=service, options=options)
 
