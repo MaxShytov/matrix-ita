@@ -19,7 +19,7 @@ def index():
 def run_matrix():
     # Получение списка аэропортов из тела запроса
     airports = request.json.get('airports', [])
-    print('==airports=======>', airports)
+    print('==airports=!!!!======>', airports)
     # Настройка WebDriver
     service = Service('./drivers/chromedriver')
     options = webdriver.ChromeOptions()
