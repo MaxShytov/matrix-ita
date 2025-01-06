@@ -18,7 +18,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 # Проверяем и устанавливаем необходимые библиотеки
 Write-Host "Проверка и установка необходимых библиотек..."
-$requiredPackages = @("flask", "selenium", "flask-cors")
+# $requiredPackages = @("flask", "selenium", "flask-cors")
+$requiredPackages = @("flask", "flask-cors", "Flask[async]", "playwright")
 foreach ($package in $requiredPackages) {
     $isInstalled = pip show $package -q
     if (-not $isInstalled) {
