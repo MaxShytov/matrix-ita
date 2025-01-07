@@ -506,7 +506,7 @@ async def run_matrix():
     # Получение списка аэропортов из тела запроса
     inputData = request.json.get('airports', [])
 
-    print('=================>', inputData)
+    print('======inputData===========>')
     async with async_playwright() as pw:
         print('Start')
         browser = await pw.chromium.launch(

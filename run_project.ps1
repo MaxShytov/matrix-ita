@@ -8,7 +8,7 @@ if (-not (Get-Command python3 -ErrorAction SilentlyContinue)) {
 # Создаем виртуальное окружение
 Write-Host "Создание виртуального окружения..."
 if (-not (Test-Path "venv")) {
-    python3 -m venv venv
+    python -m venv venv
 }
 
 # Активируем виртуальное окружение
@@ -19,7 +19,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # Проверяем и устанавливаем необходимые библиотеки
 Write-Host "Проверка и установка необходимых библиотек..."
 # $requiredPackages = @("flask", "selenium", "flask-cors")
-$requiredPackages = @("flask", "flask-cors", "Flask[async]", "playwright")
+$requiredPackages = @("flask", "flask-cors", "Flask[async]", "playwright", "selenium")
 foreach ($package in $requiredPackages) {
     $isInstalled = pip show $package -q
     if (-not $isInstalled) {
@@ -29,6 +29,9 @@ foreach ($package in $requiredPackages) {
         Write-Host "$package уже установлен."
     }
 }
+
+Write-Host "Установка PlayWright..."
+npx playwright install
 
 # Проверяем наличие проекта и обновляем из Git
 Write-Host "Проверка наличия проекта..."
