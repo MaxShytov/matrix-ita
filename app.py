@@ -13,21 +13,20 @@ from flask import Flask, render_template, request, jsonify
 # from selenium.webdriver.support import expected_conditions as EC
 from flask_cors import CORS
 
-# import asyncio
-
 from playwright.async_api import async_playwright, expect
 from datetime import datetime
 import time
+import asyncio
 
 app = Flask(__name__)
 
 # Разрешаем запросы с любых источников, включая локальные файлы
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 
 arrCabin = {
@@ -206,7 +205,7 @@ async def inputParamsOneWay(page, inputData):
         await page.click('matrix-preferred-times button')
         # print('Prefferred---->')
         for j in range(6):
-            if (PreferredTimes & (1<<j)) == 0:
+            if (PreferredTimes & (1 << j)) == 0:
                 print('Preff---->', j + 1)
                 preferred = page.locator('matrix-preferred-times mat-checkbox').nth(j)
                 await preferred.click()
@@ -314,7 +313,7 @@ async def inputParamsMultiCity(page, inputData):
             await btn.click()
             # print('Prefferred---->')
             for j in range(6):
-                if (PreferredTimes & (1<<j)) == 0:
+                if (PreferredTimes & (1 << j)) == 0:
                     print('PreferredTimes---->', j + 1)
                     preferred = tt.locator('matrix-preferred-times mat-checkbox').nth(j)
                     await preferred.click()
@@ -438,7 +437,6 @@ async def inputParamsRoundTrip(page, inputData):
     # await page.click('mat-tab-header div#mat-tab-label-0-0')  # RoundTrip
     await page.click('mat-tab-header div#mat-tab-group-0-label-0')  # RoundTrip
 
-
     # await page.wait_for_timeout(1001)
     await page.fill('matrix-location-field[formcontrolname="origin"] input', DepartingFrom)
     # await page.wait_for_timeout(1001)
@@ -494,11 +492,10 @@ async def inputParamsRoundTrip(page, inputData):
         await page.click('matrix-preferred-times button')
         # print('Prefferred---->')
         for j in range(6):
-            if (PreferredTimes & (1<<j)) == 0:
+            if (PreferredTimes & (1 << j)) == 0:
                 print('Preff---->', j + 1)
                 preferred = page.locator('matrix-preferred-times mat-checkbox').nth(j)
                 await preferred.click()
-
 
 
 @app.route('/run', methods=['POST'])
@@ -557,9 +554,14 @@ async def run_matrix():
 
         await page.click('div.cdk-overlay-container mat-option')
 
-
         await page.wait_for_timeout(600000)
-        return
+        # while browser.is_connected():
+        #     print('Браузер работает...')
+        #     await asyncio.sleep(1)
+
+        await browser.close()
+        return "Finish"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
