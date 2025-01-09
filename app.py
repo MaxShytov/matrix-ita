@@ -554,7 +554,7 @@ async def run_matrix():
 
         await page.click('div.cdk-overlay-container mat-option')
 
-        await page.wait_for_timeout(600000)
+        await page.wait_for_timeout(3600000)
         # while browser.is_connected():
         #     print('Браузер работает...')
         #     await asyncio.sleep(1)
